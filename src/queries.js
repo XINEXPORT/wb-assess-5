@@ -42,13 +42,19 @@ console.log(query7);
 
 // // // // Get all the humans who DON'T have an email address that contains "gmail"
 export const query8 = await Human.findAll({
-                    where: {email: {[Op.like]:'%gmail%'}}});
+	where: {
+        email: {[Op.notLike]: "%gmail%" },
+    }})
 
-// Continue reading the instructions before you move on!
+console.log(query8);
 
 // Print a directory of humans and their animals
-export async function printHumansAndAnimals() {}
+export async function printHumansAndAnimalsEager() {
+
+}
 
 // Return a Set containing the full names of all humans
 // with animals of the given species.
-export async function getHumansByAnimalSpecies(species) {}
+export async function getHumansByAnimalSpecies(species) {
+
+}
