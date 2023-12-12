@@ -19,7 +19,7 @@ export class Human extends Model {
 // TODO: Human.init()
 Human.init(
   {
-    human_id:{
+    humanId:{
       type: DataTypes.INTEGER,
       primaryKey: true,
       allowNull: false,
@@ -53,7 +53,7 @@ export class Animal extends Model {
 
 Animal.init(
   {
-    animal_id:{
+    animalId:{
       type: DataTypes.INTEGER,
       primaryKey: true,
       allowNull: false,
@@ -66,7 +66,7 @@ Animal.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    birth_year:{
+    birthYear:{
       type: DataTypes.INTEGER,
     },
   },
@@ -79,8 +79,8 @@ Animal.init(
 // TODO: Define Relationship
 //Establishing an Association table
 
-Human.hasMany(Animal, { foreignKey: 'human_id' })
-Animal.belongsTo(Human, { foreignKey: 'human_id' })
+Human.hasMany(Animal, { foreignKey: 'humanId' })
+Animal.belongsTo(Human, { foreignKey: 'humanId' })
 
 if(process.argv[1]===url.fileURLToPath(import.meta.url)){
   console.log("Syncing database")
